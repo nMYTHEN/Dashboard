@@ -26,14 +26,14 @@ pipeline{
         stage("BUILD"){
             steps{
                 script{
-                   sh "docker build -t tribus/tools:latest .  --network=host"
+                   sh "docker build -t nuriservices/dashboard:latest .  --network=host"
                 }
             }
         }
         stage("RUN"){
             agent{
                 docker{
-                    image "tribus/tools:latest"     
+                    image "nuriservices/dashboard:latest"     
                 }
             }
             stages{
@@ -75,7 +75,7 @@ pipeline{
     }
     post {
         always{
-            sh "docker image rm tribus/tools:latest"
+            sh "docker image rm nuriservices/dashboard:latest"
             cleanWs()
         }
     }
