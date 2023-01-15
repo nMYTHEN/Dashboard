@@ -2,7 +2,7 @@ FROM node:16-alpine as builder
 # Set the working directory to /app inside the container
 WORKDIR /app
 
-COPY toolstribus .
+COPY dashboard .
 
 RUN npm ci --save-dev
 # Build the app
