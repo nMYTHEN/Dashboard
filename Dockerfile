@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY Dashboard .
 
-RUN npm ci --save-dev
+RUN npm ci --save-dev --legacy-peer-deps
 # Build the app
 RUN npm run build
 
