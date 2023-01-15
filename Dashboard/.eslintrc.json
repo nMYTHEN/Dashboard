@@ -1,12 +1,11 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
-        "node": true
+        "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "standard-with-typescript"
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "overrides": [
     ],
@@ -19,9 +18,5 @@
         "only-warn"
     ],
     "rules": {
-        "space-before-function-paren": ["error", "never"],
-        "semi": 0,
-        "no-multiple-empty-lines": 0,
-        "no-trailing-spaces": 0
     }
 }
