@@ -40,7 +40,7 @@ pipeline{
                 stage("INSTALL"){
                     steps{
                         script {
-                            sh "npm ci --save-dev --legacy-peer-deps"
+                            sh "npm i --save-dev --legacy-peer-deps"
                         }
                     }
                 }
