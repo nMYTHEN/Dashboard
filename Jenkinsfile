@@ -44,7 +44,7 @@ pipeline{
                         }
                     }
                 }
-                stage("INSTALL"){
+                stage("BUILD"){
                     steps{
                         script {
                             sh "npm run build"
