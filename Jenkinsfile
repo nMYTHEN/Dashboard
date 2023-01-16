@@ -37,13 +37,20 @@ pipeline{
                 }
             }
             stages{
-                // stage("INSTALL"){
-                //     steps{
-                //         script {
-                //             sh "npm ci"
-                //         }
-                //     }
-                // }
+                stage("INSTALL"){
+                    steps{
+                        script {
+                            sh "npm ci --save-dev --legacy-peer-deps"
+                        }
+                    }
+                }
+                stage("INSTALL"){
+                    steps{
+                        script {
+                            sh "npm run build"
+                        }
+                    }
+                }
                 // stage("LINT"){
                 //     steps {
                 //         script {
