@@ -26,7 +26,6 @@ pipeline{
         stage("BUILD"){
             steps{
                 script{
-                   sh "ls Dashboard/"
                    sh "docker build -t nuriservices/dashboard:latest .  --network=host"
                 }
             }
@@ -69,7 +68,7 @@ pipeline{
                 stage("DEPLOY"){
                     steps{
                         script{
-                            sh "ls -a Dashboard/"
+                            sh "ls /usr/share/nginx/html" 
                             sshPublisher(publishers: [sshPublisherDesc(configName: 'Hans', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/hans/Dashboard/', remoteDirectorySDF: false, removePrefix: 'Dashboard/build/', sourceFiles: 'Dashboard/build/*/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
                             // BUILT_TAG=sh(script:"docker images --quiet", returnStdout: true).trim()
                             // sh "docker logout"
