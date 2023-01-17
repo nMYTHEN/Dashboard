@@ -68,7 +68,8 @@ pipeline{
                 stage("DEPLOY"){
                     steps{
                         script{
-                            sshPublisher(publishers: [sshPublisherDesc(configName: 'Hans', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/', remoteDirectorySDF: false, removePrefix: 'Dashboard/Dashboard/public/', sourceFiles: 'Dashboard/Dashboard/public/*/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+                            sh "ls -a"
+                            sshPublisher(publishers: [sshPublisherDesc(configName: 'Hans', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'Dashboard/Dashboard/public/', sourceFiles: 'Dashboard/Dashboard/public/*/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
                             // BUILT_TAG=sh(script:"docker images --quiet", returnStdout: true).trim()
                             // sh "docker logout"
                             // sh "docker login --password 7d9bd3de-8577-4d4c-b1f7-34b3a8173b69 --username if20b034"
