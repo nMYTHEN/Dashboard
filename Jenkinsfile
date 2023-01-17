@@ -68,6 +68,9 @@ pipeline{
                 stage("DEPLOY"){
                     steps{
                         script{
+                            sh "ls /app"
+                            sh "ls /app/build"
+                            sh "ls /"
                             sshPublisher(publishers: [sshPublisherDesc(configName: 'Hans', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/hans/Dashboard/', remoteDirectorySDF: false, removePrefix: '/app/build', sourceFiles: '/app/build/*/**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
                             // BUILT_TAG=sh(script:"docker images --quiet", returnStdout: true).trim()
                             // sh "docker logout"
