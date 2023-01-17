@@ -8,3 +8,10 @@ Dockerfile.prod
 README.md
 Jenkinsfile
 .gitignore
+.dockerignore
+.git
+.gitignore
+Jenkinsfile
+Dockerfile
+README.md
+# .eslintrc.json
