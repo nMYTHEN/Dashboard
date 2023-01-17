@@ -7,7 +7,6 @@ COPY Dashboard .
 RUN npm ci --save-dev --legacy-peer-deps
 # Build the app
 RUN npm run build
-RUN ls
 
 # # Bundle static assets with nginx
 # FROM nginx:1.21.0-alpine as production

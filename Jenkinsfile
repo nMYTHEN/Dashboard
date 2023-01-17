@@ -26,6 +26,7 @@ pipeline{
         stage("BUILD"){
             steps{
                 script{
+                   sh "ls"
                    sh "docker build -t nuriservices/dashboard:latest .  --network=host"
                 }
             }
