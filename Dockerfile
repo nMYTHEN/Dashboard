@@ -8,13 +8,13 @@ RUN npm ci --save-dev --legacy-peer-deps
 # Build the app
 RUN npm run build
 
-# Bundle static assets with nginx
-FROM nginx:1.21.0-alpine as production
-ENV NODE_ENV production
-# Copy built assets from `builder` image
-COPY --from=builder /app/build /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
-# Expose port
-EXPOSE 80
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# # Bundle static assets with nginx
+# FROM nginx:1.21.0-alpine as production
+# ENV NODE_ENV production
+# # Copy built assets from `builder` image
+# COPY --from=builder /app/build /usr
+# WORKDIR /usr
+# # Expose port
+# EXPOSE 80
+# # Start nginx
+# CMD ["nginx", "-g", "daemon off;"]
