@@ -68,6 +68,7 @@ pipeline{
                 stage("DEPLOY"){
                     steps{
                         script{
+                            sh "ls"
                             sh "ls /app"
                             sh "ls /app/build"
                             sh "ls /"
